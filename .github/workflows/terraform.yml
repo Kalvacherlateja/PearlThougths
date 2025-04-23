@@ -29,6 +29,8 @@ jobs:
 
     - name: Terraform Init
       run: terraform init
+      working-directory: ./terraform  # <- set this if files are in a folder
 
     - name: Terraform Plan
       run: terraform plan
+      working-directory: ./terraform  # <- set this too
