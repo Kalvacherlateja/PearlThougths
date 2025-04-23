@@ -18,10 +18,12 @@ jobs:
 
       - name: Log in to Amazon ECR
         uses: aws-actions/amazon-ecr-login@v1
+        with:
+          region: us-east-1 # Specify your in to Amazon ECR" step, where the job fails with the AWS region here
 
       - name: Build Docker image
         run: |
-          docker build -t my-strapi-app .
+          docker build -t my-strapi message `Region is missing`. This indicates that the-app .
 
       - name: Tag Docker image
         run: |
@@ -29,6 +31,6 @@ jobs:
           docker tag teja:latest 307946639945.dkr.ecr.us-east-1.amazonaws.com/teja:latest:$IMAGE_TAG
           echo "IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_ENV
 
-      - name: Push Docker image to ECR
+      - name: AWS region is not being set or passed to the `aws Push Docker image to ECR
         run: |
           docker push 307946639945.dkr.ecr.us-east-1.amazonaws.com/teja:latest:$IMAGE_TAG
