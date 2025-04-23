@@ -2,7 +2,7 @@ name: Terraform Deployment
 
 on:
   push:
-  workflow_dispatch:
+  workflow_dispatch: {}
 
 env:
   AWS_REGION: us-east-1
@@ -31,3 +31,4 @@ jobs:
       run: terraform init
 
     - name: Terraform Plan
+      run: terraform plan
