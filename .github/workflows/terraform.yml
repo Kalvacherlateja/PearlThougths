@@ -29,9 +29,9 @@ jobs:
 
     - name: Terraform Init
       run: terraform init
-      working-directory: terraform  # <-- match your folder name
+      working-directory: Terraform  # <-- match your folder name
 
     - name: Terraform Plan
       run: terraform plan
-      working-directory: terraform
+      working-directory: Terraform
 
